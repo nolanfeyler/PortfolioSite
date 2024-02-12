@@ -371,10 +371,37 @@ select:disabled {
 }
 
 button,
-[type=button],
-[type=reset],
-[type=submit] {
-  -webkit-appearance: button;
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  /* Resetting default styles */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  /* Custom styles for buttons */
+  display: inline-block;
+  padding: 10px 15px;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+/* Add hover and active states for better user experience */
+button:hover,
+[type="button"]:hover,
+[type="reset"]:hover,
+[type="submit"]:hover,
+button:active,
+[type="button"]:active,
+[type="reset"]:active,
+[type="submit"]:active {
+  background-color: #ddd;
+  /* Add more styles as needed */
 }
 button:not(:disabled),
 [type=button]:not(:disabled),
@@ -432,7 +459,7 @@ legend + * {
 
 [type=search] {
   outline-offset: -2px;
-  -webkit-appearance: textfield;
+  
 }
 
 /* rtl:raw:
@@ -453,7 +480,8 @@ legend + * {
 
 ::file-selector-button {
   font: inherit;
-  -webkit-appearance: button;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 output {
@@ -11551,8 +11579,8 @@ html {
 }
 
 .text-gradient {
-  background: -webkit-linear-gradient(315deg, #1e30f3 0%, #e21e80 100%);
-  -webkit-background-clip: text;
+  background: linear-gradient(315deg, #1e30f3 0%, #e21e80 100%);
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
